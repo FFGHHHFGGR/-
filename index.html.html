@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology Activity – Grade 8</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#38bdf8;--secondary:#22c55e;--bg:#020617;--card:#0f172a;--text:#e5e7eb;--muted:#94a3b8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,Segoe UI;background:radial-gradient(circle at top,#020617,#000);color:var(--text)}
+.hidden{display:none}
+.container{max-width:1100px;margin:auto;padding:30px}
+.card{background:linear-gradient(160deg,#020617,#0f172a);border-radius:24px;padding:28px;margin-bottom:26px;box-shadow:0 20px 50px rgba(56,189,248,.25)}
+header{text-align:center;margin-bottom:26px}
+header h1{font-size:34px;color:#7dd3fc;margin:0}
+header p{color:var(--muted)}
+h2{color:#bae6fd}
+.question{margin:16px 0;padding:16px;border-radius:16px;background:rgba(255,255,255,.04)}
+label{display:block;margin:8px 0}
+input[type=radio],input[type=checkbox]{margin-right:6px}
+textarea,input{background:#020617;color:#fff}
+button{background:linear-gradient(135deg,#38bdf8,#0ea5e9);color:#022c22;border:none;padding:10px 24px;border-radius:999px;cursor:pointer;margin-top:14px;font-weight:600}
+button.teacher{background:linear-gradient(135deg,#22c55e,#16a34a)}
+.result{margin-top:14px}
+.correct{color:#22c55e}
+.badge{display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:#022c22;padding:8px 18px;border-radius:999px;margin-top:12px;font-weight:600}
+.counter{text-align:center;color:#7dd3fc;font-weight:600;margin-bottom:20px}
+img.device{max-width:100%;border-radius:18px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+footer{text-align:center;color:var(--muted);margin-top:30px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="container" id="loginBox">
+<div class="card">
+<header>
+<h1>Student Registration</h1>
+<p>Enter your details to start the activity</p>
+</header>
+<label>Student Name
+<input id="studentName" style="width:100%;padding:10px;border-radius:12px;border:none">
+</label>
+<label>Class / Section
+<input id="studentClass" style="width:100%;padding:10px;border-radius:12px;border:none">
+</label>
+<button onclick="startActivity()">Start Activity</button>
+</div>
+</div>
+
+<!-- ACTIVITY -->
+<div class="container hidden" id="activityBox">
+<header>
+<h1>💻 Technology & Computer Science Activity</h1>
+<p>From ✭ Khalid's creations ✭</p>
+</header>
+
+<div class="counter" id="studentCounter"></div>
+
+<div class="card">
+<h2>🧠  Activities</h2>
+
+<div class="question">1) Technology helps people communicate easily.
+<label><input type="radio" name="q1" value="1"> True</label>
+<label><input type="radio" name="q1" value="0"> False</label>
+</div>
+
+<div class="question">2) Computers are used only for entertainment.
+<label><input type="radio" name="q2" value="0"> True</label>
+<label><input type="radio" name="q2" value="1"> False</label>
+</div>
+
+<div class="question">3) The Internet can help students learn new skills.
+<label><input type="radio" name="q3" value="1"> True</label>
+<label><input type="radio" name="q3" value="0"> False</label>
+</div>
+
+<div class="question">4)Is the keyboard an output device.
+<label><input type="radio" name="q4" value="1"> True</label>
+<label><input type="radio" name="q4" value="0"> False</label>
+</div>
+
+<div class="question">5) Which one is an example of technology?
+<label><input type="radio" name="q5" value="1"> Smartphone</label>
+<label><input type="radio" name="q5" value="0"> Pencil</label>
+<label><input type="radio" name="q5" value="0"> Paper</label>
+</div>
+
+<div class="question">6) Technology can help people with disabilities.
+<label><input type="radio" name="q6" value="1"> True</label>
+<label><input type="radio" name="q6" value="0"> False</label>
+</div>
+
+<div class="question">7) Which device is used to move the cursor?
+<label><input type="radio" name="q7" value="1"> Mouse</label>
+<label><input type="radio" name="q7" value="0"> Monitor</label>
+<label><input type="radio" name="q7" value="0"> Printer</label>
+</div>
+
+<div class="question">8) Which of these is NOT an input device?
+<label><input type="radio" name="q8" value="1"> Monitor</label>
+<label><input type="radio" name="q8" value="0"> Keyboard</label>
+<label><input type="radio" name="q8" value="0"> Mouse</label>
+</div>
+
+<div class="question">9) Computers You don't need electricity to work.
+<label><input type="radio" name="q9" value="1"> True</label>
+<label><input type="radio" name="q9" value="0"> False</label>
+</div>
+
+<div class="question">10) Which one stores information?
+<label><input type="radio" name="q10" value="1"> Hard Drive</label>
+<label><input type="radio" name="q10" value="0"> Mouse</label>
+<label><input type="radio" name="q10" value="0"> Keyboard</label>
+</div>
+
+<hr style="border:0;border-top:1px solid #1e293b;margin:30px 0">
+
+<h2>❔ Visual Thinking </h2>
+<p>Select the input devices:</p>
+<div class="options">
+  <label><input type="radio" name="device"> Keyboard</label>
+  <label><input type="radio" name="device"> Mouse</label>
+  <label><input type="radio" name="device"> Monitor</label>
+  <label><input type="radio" name="device"> Printer</label>
+<span class="badge">! Review your answers !</span>
+</div>
+
+
+<hr style="border:0;border-top:1px solid #1e293b;margin:30px 0">
+
+<button onclick="submitActivity()">Submit Full Activity</button>
+<div id="scoreResult" class="result"></div>
+</div>
+
+<button class="teacher" onclick="openTeacher()">👨‍🏫 Teacher Panel</button>
+
+<footer>Saved locally for teacher review – Learning Activity</footer>
+</div>
+
+<script>
+function getRecords(){return JSON.parse(localStorage.getItem('teacherRecords')||'[]');}
+function saveRecords(r){localStorage.setItem('teacherRecords',JSON.stringify(r));}
+
+function updateCounter(){
+let list=getRecords();
+document.getElementById('studentCounter').innerText=`👥 Students entered: ${list.length}`;
+}
+
+function startActivity(){
+let name=document.getElementById('studentName').value.trim();
+if(!name){alert('Please enter your name');return;}
+localStorage.setItem('currentStudent',JSON.stringify({name:name,class:document.getElementById('studentClass').value}));
+document.getElementById('loginBox').classList.add('hidden');
+document.getElementById('activityBox').classList.remove('hidden');
+updateCounter();
+}
+
+function submitActivity(){
+let score=0;
+document.querySelectorAll('input[type=radio]:checked').forEach(r=>score+=Number(r.value));
+let student=JSON.parse(localStorage.getItem('currentStudent'));
+let records=getRecords();
+records.push({
+name:student.name,
+class:student.class,
+score:score,
+reflection:document.getElementById('reflection').value,
+time:new Date().toLocaleString()
+});
+saveRecords(records);
+document.getElementById('scoreResult').innerHTML=`<p class='correct'>✔️ Submitted successfully</p><p><strong>Score: ${score} / 10</strong></p>`;
+updateCounter();
+}
+
+
+function openTeacher(){
+let pass=prompt('Enter teacher password');
+if(pass!=='kl123456'){alert('Access denied');return;}
+let records=getRecords();
+if(records.length===0){alert('No submissions yet');return;}
+let text='STUDENT RESULTS:\n\n';
+records.forEach((r,i)=>{
+text+=`${i+1}) ${r.name} | Class: ${r.class} | Score: ${r.score}/10 | Reflection: ${r.reflection? 'Yes':'No'} | ${r.time}\n`;
+});
+alert(text);
+}
+</script>
+</body>
+<script>
+function getRecords(){
+  return JSON.parse(localStorage.getItem('teacherRecords') || '[]');
+}
+
+function saveRecords(r){
+  localStorage.setItem('teacherRecords', JSON.stringify(r));
+}
+
+function updateCounter(){
+  let list = getRecords();
+  document.getElementById('studentCounter').innerText =
+    '👥 Students entered: ' + list.length;
+}
+
+function startActivity(){
+  let name = document.getElementById('studentName').value.trim();
+  if(!name){
+    alert('Please enter your name');
+    return;
+  }
+
+  localStorage.setItem('currentStudent', JSON.stringify({
+    name: name,
+    class: document.getElementById('studentClass').value
+  }));
+
+  document.getElementById('loginBox').classList.add('hidden');
+  document.getElementById('activityBox').classList.remove('hidden');
+  updateCounter();
+}
+
+function submitActivity(){
+
+  if(localStorage.getItem('submitted')){
+    alert('You already submitted.');
+    return;
+  }
+
+  let score = 0;
+  document.querySelectorAll("input[type='radio']:checked")
+    .forEach(r => score += Number(r.value));
+
+  let student = JSON.parse(localStorage.getItem('currentStudent'));
+  let records = getRecords();
+
+  records.push({
+    name: student.name,
+    class: student.class,
+    score: score,
+    time: new Date().toLocaleString()
+  });
+
+  saveRecords(records);
+  localStorage.setItem('submitted', 'yes');
+
+  document.getElementById('scoreResult').innerHTML =
+    '<p class="correct">✔️ Submitted successfully</p>' +
+    '<p><strong>Score: ' + score + ' / 10</strong></p>';
+
+  updateCounter();
+  resetAll();
+}
+
+function resetAll(){
+  setTimeout(function(){
+
+    document.querySelectorAll("input[type='radio']")
+      .forEach(r => r.checked = false);
+
+    document.getElementById('studentName').value = '';
+    document.getElementById('studentClass').value = '';
+
+    localStorage.removeItem('currentStudent');
+    localStorage.removeItem('submitted');
+
+    document.getElementById('activityBox').classList.add('hidden');
+    document.getElementById('loginBox').classList.remove('hidden');
+
+    document.getElementById('scoreResult').innerHTML = '';
+
+  }, 1500);
+}
+
+function openTeacher(){
+  let pass = prompt('Enter teacher password');
+  if(pass !== 'kl123456'){
+    alert('Access denied');
+    return;
+  }
+
+  let records = getRecords();
+  if(records.length === 0){
+    alert('No submissions yet');
+    return;
+  }
+
+  let text = 'STUDENT RESULTS:\n\n';
+  records.forEach((r,i)=>{
+    text += (i+1) + ') ' + r.name +
+      ' | Class: ' + r.class +
+      ' | Score: ' + r.score + '/10' +
+      ' | ' + r.time + '\n';
+  });
+
+  alert(text);
+}
+</script>
+
+</html>
